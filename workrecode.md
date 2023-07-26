@@ -149,3 +149,4 @@
         
    ```
 
+  #### PM 16:43 main, account, post 간의 urls 및 views 기본 양식 구성 후 각각의 이동 확인
