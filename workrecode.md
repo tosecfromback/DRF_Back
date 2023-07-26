@@ -109,17 +109,26 @@
  ### PM 02:10 1차 Django 시작
   #### PM 14:46 Account, GPTQnA Models.py 기본 형태 구성
   #### PM 14:50 makemigrations 중 account의 모델과 관련된 에러가 발생
-  ```shell
-  SystemCheckError: System check identified some issues:
+   ```shell
+    SystemCheckError: System check identified some issues:
 
-ERRORS:
-account.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'account.User.groups' clashes with reverse accessor for 'auth.User.groups'.
+    ERRORS:
+    account.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'account.User.groups' clashes with reverse accessor for 'auth.User.groups'.
         HINT: Add or change a related_name argument to the definition for 'account.User.groups' or 'auth.User.groups'.
-account.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'account.User.user_permissions' clashes with reverse accessor for 'auth.User.user_permissions'.
+    account.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'account.User.user_permissions' clashes with reverse accessor for 'auth.User.user_permissions'.
         HINT: Add or change a related_name argument to the definition for 'account.User.user_permissions' or 'auth.User.user_permissions'.
-auth.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'auth.User.groups' clashes with reverse accessor for 'account.User.groups'.
+    auth.User.groups: (fields.E304) Reverse accessor 'Group.user_set' for 'auth.User.groups' clashes with reverse accessor for 'account.User.groups'.
         HINT: Add or change a related_name argument to the definition for 'auth.User.groups' or 'account.User.groups'.
-auth.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'auth.User.user_permissions' clashes with reverse accessor for 'account.User.user_permissions'.
+    auth.User.user_permissions: (fields.E304) Reverse accessor 'Permission.user_set' for 'auth.User.user_permissions' clashes with reverse accessor for 'account.User.user_permissions'.
         HINT: Add or change a related_name argument to the definition for 'auth.User.user_permissions' or 'account.User.user_permissions'.
   ```
+   - PM 15:04 해결
+   ```python
+   settings.py
+   
+   # Auth user
+   AUTH_USER_MODEL = 'customUerModel'
+   ```
+   setttings.py에 해당 코드를 추가하면 해결됨. 유저가 별도로 구현한 User모델을 사용하기 위해서 넣어햐하는데 누락되서 발생함
+  #### PM 15:08 createsuperuser 시 login_id를 입력받지 못함
 

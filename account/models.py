@@ -45,7 +45,7 @@ class User(AbstractUser):
     daily_post = models.IntegerField(default=0)
 
     USERNAME_FIELD = 'nickname'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = [login_id]
 
     objects = UserManager()
 
