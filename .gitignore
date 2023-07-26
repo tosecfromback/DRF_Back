@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 ### Markdownd For Wiki ###
-workrecord.md
-advnote.md
+./workrecord.md
+./advnote.md
 
 ### Django ###
 *.log
