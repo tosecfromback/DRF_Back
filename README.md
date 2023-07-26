@@ -4,14 +4,14 @@
 ### 1. 목표
  - JS와 Django를 각각의 Repo로 구현하여 DRF를 통해 웹서비스를 프런트엔드와 백엔드로 구현
 ### 2. 구성 마인드맵
- - <img src="./readme/Relation_demo_img.png>
+ - <img src="./readme/Relation_demo_img.png>"
 
 
 ## 01. 진행과정
 ### 23.07.26 AM 09:05 Front와 Back의 구성 기획
 
 ### 23.07.26 AM 09:50 Django Model 구성
- - 01. Django 가상환경구성
+ 01. Django 가상환경구성
   ```shell
   python -m venv venv                                   # python -m venv (가상환경이름) 으로 가상환경 생성
   ./venv/Scripts/Activate.ps1                           # 생성된 가상환경 실행
@@ -33,12 +33,12 @@
    sqlparse            0.4.4
    tzdata              2023.3
    ```
- - 02. DjangoApp구성 및 settings.py 기본설정
+ 02. DjangoApp구성 및 settings.py 기본설정
  ```shell
- (venv) django-admin startproject QnAbot .                     # django-admin startproject (프로젝트명) . 을 통해 현재위치에 프로젝트명의 프로젝트 생성 **1 **2
- (venv) django-admin startapp account                          # djagno-admin startapp으로 각각의 내부 애플리케이션생성(사용자)
- (venv) djagno-admin startapp GPTQnA                           # 해당 프로젝트의 GPT질의를 정리하는 app
- (venv) django-admin startapp Post                             # GPTQnA를 참조해서 화면으로 출력할 내용을 가공하는 앱
+ (venv) django-admin startproject QnAbot .      # django-admin startproject (프로젝트명) . 을 통해 현재위치에 프로젝트명의 프로젝트 생성 **1 **2
+ (venv) django-admin startapp account           # djagno-admin startapp으로 각각의 내부 애플리케이션생성(사용자)
+ (venv) djagno-admin startapp GPTQnA            # 해당 프로젝트의 GPT질의를 정리하는 app
+ (venv) django-admin startapp Post              # GPTQnA를 참조해서 화면으로 출력할 내용을 가공하는 앱
  ```
   - **1 마지막의 . 을 넣지 않을 경우 Projectname/Projectname(생성된프로젝트폴더)의 구조로 생성됨
   - **2 같은 폴더 내에서 프로젝트를 새로 생성할 경우 프로젝트폴더와 manage.py를 같이 삭제하고 첫 줄의 명령어를 다시입력하는 것으로 가능
