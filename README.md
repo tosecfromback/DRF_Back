@@ -4,14 +4,14 @@
 ### 1. 목표
  - JS와 Django를 각각의 Repo로 구현하여 DRF를 통해 웹서비스를 프런트엔드와 백엔드로 구현
 ### 2. 구성 마인드맵
- - <img src="./readme/Relation_demo_img.png">
+ <img src="./readme/Relation_demo_img.png">
 
 
 ## 01. 진행과정
 ### 23.07.26 AM 09:05 Front와 Back의 구성 기획
 
 ### 23.07.26 AM 09:50 Django Model 구성
- 01. Django 가상환경구성
+ #### 01. Django 가상환경구성
   ```shell
   python -m venv venv                                   # python -m venv (가상환경이름) 으로 가상환경 생성
   ./venv/Scripts/Activate.ps1                           # 생성된 가상환경 실행
@@ -33,7 +33,7 @@
    sqlparse            0.4.4
    tzdata              2023.3
    ```
- 02. DjangoApp구성 및 settings.py 기본설정
+ #### 02. DjangoApp구성 및 settings.py 기본설정
  ```shell
  (venv) django-admin startproject QnAbot .      # django-admin startproject (프로젝트명) . 을 통해 현재위치에 프로젝트명의 프로젝트 생성 **1 **2
  (venv) django-admin startapp account           # djagno-admin startapp으로 각각의 내부 애플리케이션생성(사용자)
