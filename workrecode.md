@@ -130,5 +130,22 @@
    AUTH_USER_MODEL = 'customUerModel'
    ```
    setttings.py에 해당 코드를 추가하면 해결됨. 유저가 별도로 구현한 User모델을 사용하기 위해서 넣어햐하는데 누락되서 발생함
-  #### PM 15:08 createsuperuser 시 login_id를 입력받지 못함
+  #### PM 15:08 manage.py createsuperuser 시 createsuperuser와 account.User사이의 차이로 충돌
+   - PM 15:42 account.models의 User클래스에 다음 코드를 추가
+   ```python
+   models.py
+   
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['nickname']
+   ```
+   - PM 15:37 ValueError: localtime() cannot be applied to a naive datetime 발생
+   - PM 15:42 UserManager에서 호출한 timezone을 변경
+   ```python
+   def _create_user(self, **kargs):
+        now = timezone.localetime()
+
+   def _create_user(self, **kargs):
+        now = timezone.now()
+        
+   ```
 
