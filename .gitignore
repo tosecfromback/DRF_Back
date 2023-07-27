@@ -4,6 +4,7 @@
 ### Markdownd For Wiki ###
 ./workrecord.md
 ./advnote.md
+*.xslx
 
 ### Django ###
 *.log
