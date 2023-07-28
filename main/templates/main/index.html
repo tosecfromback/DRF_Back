@@ -4,5 +4,5 @@
 {% block content %}
   <h1>Here is Index Page</h1>
   <p>로그인이 필요한 서비스입니다.</p>
-  <p>로그인</p>
+  <a href="{% url 'account:index' %}">로그인화면으로</a>
 {% endblock content %}

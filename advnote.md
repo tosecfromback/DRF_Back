@@ -28,6 +28,14 @@ os.environ.get('key', 'value')같은 방식으로 value의 초기값을 정하�
  # 출처 : 백엔드를 위한 DJANGO REST FRAMEWORK with 파이썬 / 권태형 저 / 영진닷컴
  ```
 
+### 02. Django 관련 웹사이트
+ - Django 공식문서 : https://docs.djangoproject.com/
+ - Django Library 참고 : https://djangopackages.org/
+
+### 03. Django에서 IP주소 관리
+ - 과거 Django 1.x 대에서는 Middleware 중 REMOTE_ADDR로 지원했으나 보안상의 문제로 제거를 권고
+ - 추후 DjangoIPware라는 패키지를 통해서 활용하는 것이 가능하다고 함
+  - 하지만 해당 패키지의 문서를 아직 읽어보진 않아서 기존의 Middleware인 REMOTE_ADDR의 문제를 해결했는지는 확인해야함
 
 ## 03. DjangoRESTFramework
 ### 01. DRF의 특징
