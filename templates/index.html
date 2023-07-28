@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% load i18n %}
-
-{% block content %}
-  <h1>{% trans "Here is Index" %}</h1>
-  <h2>{% trans "Welcome, Guest! Please select Page" %}</h2>
-  <a href="{% url 'post:list' %}" class="btn">{% trans "Post page" %}</a>
-  <a href="{% url 'account:logIndex' %}" class="btn">{% trans "Login" %}</a>
-{% endblock content %}

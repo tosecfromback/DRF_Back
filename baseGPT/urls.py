@@ -1,5 +1,5 @@
 """
-URL configuration for GPTbot project.
+URL configuration for baseGPT project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -20,8 +20,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Index.as_view()),
+    path('', include('main.urls')),
     path('account/', include('account.urls')),
-    path('post/',include('post.urls')),
-    # path('GPTQnA/',include('GPTQnA.urls')),
+    path('chat/', include('chat.urls')),
+    path('post/', include('post.urls')),
 ]
