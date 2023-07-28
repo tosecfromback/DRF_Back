@@ -3,4 +3,8 @@
 
 {% block content %}
   <h1>여기는 post의 Index페이지</h1>
+  <h2>리스트로 하단에 질문과 답변이 들어감</h2>
+  <a href="{% url 'post:detail' %}">게시글 상세</a>
+  <h2>검색은 여기서 가능하지만 결과는 이동함</h2>
+  <a href="{% url 'post:search' %}">검색결과</a>
 {% endblock content %}

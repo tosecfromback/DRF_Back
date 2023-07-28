@@ -3,4 +3,11 @@
 
 {% block content %}
   <h1>여기는 account의 Index페이지</h1>
+  <a href="{% url 'account:login' %}">로그인</a>
+  <a href="{% url 'account:signin' %}">회원가입</a>
+  <a href="{% url 'account:logout' %}">로그아웃</a>
+  <a href="{% url 'account:profile' %}">프로필 상세</a>
+  <a href="{% url 'account:update' %}">프로필 수정</a>
+  <a href="{% url 'account:passchng' %}">비밀번호 변경</a>
+  <a href="{% url 'account:signout' %}">회원탈퇴</a>
 {% endblock content %}
