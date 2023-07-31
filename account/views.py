@@ -4,7 +4,7 @@ from django.views import View
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
-# from .forms import SingupFrom, LoginForm
+from .forms import LoginForm, SigninForm
 
 # Create your views here.
 
@@ -22,12 +22,21 @@ class Index(View):
 ### Signup
 class SignIn(View):
     def get(self, request):
+        if request.user.is_authenticated:
+             return redirect('main:index')
+        form = SigninForm()
         context = {
+            'form' : form, 
             'title' : '회원가입'
         }
+    
         return render(request, 'account/signin.html', context)
+    
     def post(self, request):
-        pass
+        form = SigninForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            return redirect('account:login')
 
 
 ### Login
